@@ -10,6 +10,8 @@ export function Portfolio() {
   const t = useTranslations('Portfolio');
   const tw = useTranslations('WhatsApp');
 
+  if (projects.length === 0) return null;
+
   return (
     <Section
       id="portfolio"

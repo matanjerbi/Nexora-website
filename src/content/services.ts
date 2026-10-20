@@ -103,7 +103,7 @@ export const services = z.array(serviceSchema).parse([
         'עדכוני אבטחה ותוכנה',
         'עדכוני תוכן ותמונות לפי בקשה',
         'בדיקות מהירות וביצועים',
-        'מענה מהיר בוואטסאפ',
+        'מענה בוואטסאפ תוך שעתיים',
       ],
       en: [
         '24/7 uptime monitoring with alerts',
@@ -111,7 +111,7 @@ export const services = z.array(serviceSchema).parse([
         'Security and software updates',
         'Content and image updates on request',
         'Speed and performance checks',
-        'Quick answers on WhatsApp',
+        'WhatsApp replies within 2 hours',
       ],
     },
     idealFor: {

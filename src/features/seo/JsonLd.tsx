@@ -1,6 +1,6 @@
 import { useLocale, useTranslations } from 'next-intl';
 import { siteConfig } from '@/config/site';
-import { services } from '@/content';
+import { founder, services } from '@/content';
 import { absoluteUrl, localizedPath } from '@/lib/seo';
 
 /** ProfessionalService structured data for the home page. */
@@ -21,6 +21,12 @@ export function JsonLd() {
     image: absoluteUrl(`${localizedPath(locale)}/opengraph-image`),
     telephone: siteConfig.phone.href.replace('tel:', ''),
     email: siteConfig.email,
+    founder: {
+      '@type': 'Person',
+      name: founder.name[locale],
+      jobTitle: founder.role[locale],
+      image: absoluteUrl(founder.photo.src),
+    },
     areaServed: { '@type': 'Country', name: 'Israel' },
     knowsLanguage: ['he', 'en'],
     inLanguage: locale,
