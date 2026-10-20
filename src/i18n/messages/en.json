@@ -45,7 +45,7 @@
     "subtitle": "We build fast, secure, monitored websites for small businesses, and stay with you long after launch. One point of contact for everything technical.",
     "primaryCta": "Talk to us on WhatsApp",
     "secondaryCta": "See what we do",
-    "note": "Quick replies · No commitment"
+    "note": "WhatsApp reply within 2 hours · Live in 1–3 weeks"
   },
   "Proof": {
     "eyebrow": "Proof, not promises",
@@ -107,7 +107,7 @@
   "Process": {
     "eyebrow": "How we work",
     "title": "From first conversation to a live site",
-    "description": "Five clear steps. No surprises along the way.",
+    "description": "Five clear steps, and a live site in one to three weeks.",
     "step": "Step {number}"
   },
   "Portfolio": {
@@ -131,7 +131,7 @@
   },
   "FinalCta": {
     "title": "Ready for a website that works for you?",
-    "description": "Tell us about your business and we'll come back with a direction and a quote. No commitment, no forms.",
+    "description": "Tell us about your business and get a WhatsApp reply within two hours, with a direction and a quote. No commitment, no forms.",
     "cta": "Start on WhatsApp",
     "or": "Or call:"
   },
