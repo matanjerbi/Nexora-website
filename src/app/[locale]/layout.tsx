@@ -1,7 +1,12 @@
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locale as rootLocale } from 'next/root-params';
 import { MotionProvider } from '@/components/motion/MotionProvider';
+import { FloatingWhatsApp } from '@/features/layout/FloatingWhatsApp';
+import { Footer } from '@/features/layout/Footer';
+import { Header } from '@/features/layout/Header';
+import { SkipLink } from '@/features/layout/SkipLink';
 import { localeDirection, routing } from '@/i18n/routing';
 import { fontVariables } from '../fonts';
 import '../globals.css';
@@ -14,11 +19,20 @@ export default async function LocaleLayout({ children }: LayoutProps<'/[locale]'
   const locale = await rootLocale();
   if (!hasLocale(routing.locales, locale)) notFound();
 
+  // Only ship the strings client components actually read; everything else renders on the server.
+  const { LanguageSwitcher } = await getMessages();
+
   return (
     <html lang={locale} dir={localeDirection[locale]} className={fontVariables}>
       <body className="bg-bg text-fg">
-        <NextIntlClientProvider>
-          <MotionProvider>{children}</MotionProvider>
+        <NextIntlClientProvider messages={{ LanguageSwitcher }}>
+          <MotionProvider>
+            <SkipLink />
+            <Header />
+            {children}
+            <Footer />
+            <FloatingWhatsApp />
+          </MotionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

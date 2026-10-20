@@ -196,11 +196,14 @@
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--cyan);
+}
 
-  &:lang(he) {
+/* Wide tracking breaks up Hebrew letterforms; keep eyebrows tighter and a touch larger there. */
+@layer utilities {
+  .eyebrow:lang(he) {
     font-size: 0.875rem;
     font-weight: 400;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
   }
 }
 
