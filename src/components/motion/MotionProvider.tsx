@@ -1,12 +1,17 @@
 'use client';
 
-import { LazyMotion, MotionConfig, domAnimation } from 'framer-motion';
+import { LazyMotion, MotionConfig } from 'framer-motion';
 import type { ReactNode } from 'react';
 
-/** Loads only the `domAnimation` feature set and honors the OS reduced-motion setting. */
+const loadFeatures = () => import('./motion-features').then((mod) => mod.default);
+
+/**
+ * Loads only the `domAnimation` feature set, asynchronously after hydration, and honors the
+ * OS reduced-motion setting. Content renders immediately; animations attach once features arrive.
+ */
 export function MotionProvider({ children }: { children: ReactNode }) {
   return (
-    <LazyMotion features={domAnimation} strict>
+    <LazyMotion features={loadFeatures} strict>
       <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </LazyMotion>
   );
