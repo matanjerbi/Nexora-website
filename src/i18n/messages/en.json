@@ -45,6 +45,39 @@
     "secondaryCta": "See what we do",
     "note": "Quick replies · No commitment"
   },
+  "Proof": {
+    "eyebrow": "Proof, not promises",
+    "title": "Don't take our word for it. Measure it.",
+    "description": "These numbers aren't written in advance. Your browser measured them just now, the moment you opened this page. This is what a properly built site looks like.",
+    "live": "Measured live in your browser",
+    "measuring": "Measuring…",
+    "unavailable": "n/a",
+    "paint": {
+      "label": "Time until content appeared",
+      "hint": "Largest Contentful Paint",
+      "unit": "s"
+    },
+    "weight": {
+      "label": "Page weight",
+      "hint": "Transferred, compressed",
+      "unit": "KB"
+    },
+    "requests": {
+      "label": "Files loaded",
+      "hint": "HTTP requests"
+    },
+    "cls": {
+      "label": "Layout jumps",
+      "hint": "CLS · 0 = perfect"
+    },
+    "compare": {
+      "title": "Page weight, compared",
+      "thisPage": "This page",
+      "average": "Average web homepage",
+      "lighter": "This page is {times}× lighter than average",
+      "source": "Source: {source} (median, mobile)"
+    }
+  },
   "Services": {
     "eyebrow": "Services",
     "title": "What we build for you",
