@@ -4,14 +4,15 @@ import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { Logo } from '@/components/ui/Logo';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
 import { mainNav } from '@/config/navigation';
-import { getPathname } from '@/i18n/navigation';
 import { MobileMenu } from './MobileMenu';
+import { localizedPath } from '@/lib/seo';
 
 export function Header() {
   const t = useTranslations('Nav');
   const tw = useTranslations('WhatsApp');
+  const tl = useTranslations('LanguageSwitcher');
   const locale = useLocale();
-  const home = getPathname({ href: '/', locale });
+  const home = localizedPath(locale);
   const links = mainNav.map((id) => ({ href: `${home}#${id}`, label: t(id) }));
   const cta = (
     <WhatsAppButton message={tw('messages.general')} label={tw('short')} variant="primary" />
@@ -37,7 +38,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <LanguageSwitcher />
+          <LanguageSwitcher locale={locale} label={tl('label')} />
           {cta}
         </div>
 
@@ -49,7 +50,7 @@ export function Header() {
             links={links}
             footer={
               <>
-                <LanguageSwitcher />
+                <LanguageSwitcher locale={locale} label={tl('label')} />
                 <WhatsAppButton
                   message={tw('messages.general')}
                   label={tw('cta')}

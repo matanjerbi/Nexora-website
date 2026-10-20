@@ -8,9 +8,11 @@ export const michroma = Michroma({
   variable: '--font-michroma',
 });
 
+/** English body only, so it isn't preloaded on every page; the metric-matched fallback keeps CLS at 0. */
 export const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
+  preload: false,
   variable: '--font-inter',
 });
 
