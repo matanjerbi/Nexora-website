@@ -1,4 +1,5 @@
 import { Hero } from '@/features/hero/Hero';
+import { WhyNexora } from '@/features/why-nexora/WhyNexora';
 import { CapabilitiesStrip } from '@/features/services/CapabilitiesStrip';
 import { Services } from '@/features/services/Services';
 
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Services />
       <CapabilitiesStrip />
+      <WhyNexora />
     </main>
   );
 }
