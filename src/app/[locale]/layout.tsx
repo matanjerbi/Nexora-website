@@ -11,7 +11,7 @@ import { SkipLink } from '@/features/layout/SkipLink';
 import { brandColors } from '@/config/brand';
 import { siteConfig } from '@/config/site';
 import { localeDirection, routing } from '@/i18n/routing';
-import { absoluteUrl, localeAlternates, localizedPath, ogLocales } from '@/lib/seo';
+import { localeAlternates, openGraphFor } from '@/lib/seo';
 import { fontVariables } from '../fonts';
 import '../globals.css';
 
@@ -35,15 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: t('description'),
     applicationName: siteConfig.name,
     alternates: localeAlternates(locale),
-    openGraph: {
-      type: 'website',
-      siteName: siteConfig.name,
-      title: t('title'),
-      description: t('description'),
-      url: absoluteUrl(localizedPath(locale)),
-      locale: ogLocales[locale],
-      alternateLocale: routing.locales.filter((l) => l !== locale).map((l) => ogLocales[l]),
-    },
+    openGraph: openGraphFor(locale, { title: t('title'), description: t('description') }),
     twitter: { card: 'summary_large_image', title: t('title'), description: t('description') },
     formatDetection: { telephone: false, email: false, address: false },
   };
