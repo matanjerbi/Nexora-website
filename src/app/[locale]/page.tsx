@@ -1,3 +1,4 @@
+import { About } from '@/features/about/About';
 import { Faq } from '@/features/faq/Faq';
 import { FinalCta } from '@/features/final-cta/FinalCta';
 import { Hero } from '@/features/hero/Hero';
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <CapabilitiesStrip />
       <WhyNexora />
+      <About />
       <Process />
       <Portfolio />
       <Faq />

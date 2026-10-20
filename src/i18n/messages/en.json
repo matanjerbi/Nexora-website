@@ -17,6 +17,7 @@
     "closeMenu": "Close menu",
     "services": "Services",
     "why": "Why Nexora",
+    "about": "About",
     "process": "Process",
     "portfolio": "Work",
     "faq": "FAQ"
@@ -33,7 +34,8 @@
       "faq": "Hi, I have a question I couldn't find on the website.",
       "finalCta": "Hi, I'd like to start a new project.",
       "notFound": "Hi, I landed on a page that doesn't exist on your site and could use some help.",
-      "accessibility": "Hi, I'd like to report an accessibility issue on the website."
+      "accessibility": "Hi, I'd like to report an accessibility issue on the website.",
+      "about": "Hi Matan, I saw your website and would like to talk."
     }
   },
   "Hero": {
@@ -96,6 +98,11 @@
     "description": "Fast, secure, monitored, and built to last. Behind Nexora is real systems-engineering experience, not just design.",
     "backgroundTitle": "Our background",
     "benefitsTitle": "What that means for you"
+  },
+  "About": {
+    "eyebrow": "Who's behind Nexora",
+    "title": "Nice to meet you, I'm Matan.",
+    "cta": "Talk to me directly"
   },
   "Process": {
     "eyebrow": "How we work",

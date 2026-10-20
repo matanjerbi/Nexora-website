@@ -6,3 +6,4 @@ export { projects } from './projects';
 export { faqs } from './faq';
 export { accessibilityStatement } from './accessibility';
 export { medianPageWeight } from './benchmarks';
+export { founder } from './founder';
