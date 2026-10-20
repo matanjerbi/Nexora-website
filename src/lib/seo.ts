@@ -27,6 +27,21 @@ export function localeAlternates(locale: Locale, path = '') {
 
 export const ogLocales: Record<Locale, string> = { he: 'he_IL', en: 'en_US' };
 
+/** Full Open Graph block. Pages must pass all of it: Next replaces (not merges) a parent's openGraph. */
+export function openGraphFor(locale: Locale, { title, description, path = '' }: OgInput) {
+  return {
+    type: 'website' as const,
+    siteName: siteConfig.name,
+    title,
+    description,
+    url: absoluteUrl(localizedPath(locale, path)),
+    locale: ogLocales[locale],
+    alternateLocale: routing.locales.filter((l) => l !== locale).map((l) => ogLocales[l]),
+  };
+}
+
+type OgInput = { title: string; description?: string; path?: string };
+
 /** The N mark as a standalone SVG string (for next/og images and data URIs). */
 export function nMarkSvg(): string {
   const c = brandColors;

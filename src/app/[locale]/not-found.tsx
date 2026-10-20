@@ -11,7 +11,7 @@ export default function NotFound() {
   const locale = useLocale();
 
   return (
-    <main id="main" className="relative isolate overflow-hidden">
+    <main id="main" tabIndex={-1} className="relative isolate overflow-hidden outline-none">
       <div aria-hidden className="absolute inset-0 -z-10 bg-grid" />
       <Container className="flex min-h-[70dvh] flex-col items-center justify-center py-24 text-center">
         <title>{t('metaTitle')}</title>

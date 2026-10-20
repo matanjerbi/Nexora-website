@@ -8,8 +8,7 @@
     "label": "Skip to main content"
   },
   "LanguageSwitcher": {
-    "label": "Language",
-    "switchTo": "עברו לעברית"
+    "label": "Language"
   },
   "Nav": {
     "label": "Main navigation",
@@ -33,7 +32,8 @@
       "portfolio": "Hi, I saw your work on the website and would like to talk about a project.",
       "faq": "Hi, I have a question I couldn't find on the website.",
       "finalCta": "Hi, I'd like to start a new project.",
-      "notFound": "Hi, I landed on a page that doesn't exist on your site and could use some help."
+      "notFound": "Hi, I landed on a page that doesn't exist on your site and could use some help.",
+      "accessibility": "Hi, I'd like to report an accessibility issue on the website."
     }
   },
   "Hero": {
@@ -110,5 +110,11 @@
     "title": "We couldn't find that page",
     "description": "The link may be broken or the page may have moved. Head back home, or message us and we'll help.",
     "home": "Back to home"
+  },
+  "Accessibility": {
+    "metaTitle": "Accessibility statement",
+    "title": "Accessibility statement",
+    "contactTitle": "Accessibility contact",
+    "updated": "Last updated: {date}"
   }
 }

@@ -102,3 +102,20 @@ export const projectSchema = z.object({
   status: z.enum(['live', 'demo']),
 });
 export type Project = z.infer<typeof projectSchema>;
+
+export const statementSectionSchema = z.object({
+  id: z.string(),
+  heading: localizedSchema,
+  paragraphs: z.array(localizedSchema).default([]),
+  items: localizedList.optional(),
+});
+export type StatementSection = z.infer<typeof statementSectionSchema>;
+
+export const accessibilityStatementSchema = z.object({
+  /** ISO date (YYYY-MM-DD) the statement was last reviewed. */
+  updated: z.iso.date(),
+  intro: localizedSchema,
+  sections: z.array(statementSectionSchema).min(1),
+  contactIntro: localizedSchema,
+});
+export type AccessibilityStatement = z.infer<typeof accessibilityStatementSchema>;
