@@ -1,13 +1,16 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { cn } from '@/lib/cn';
 
-type Variant = 'primary' | 'secondary' | 'ghost';
+type Variant = 'primary' | 'secondary' | 'inverse' | 'ghost';
 type Size = 'md' | 'lg';
 
 const variants: Record<Variant, string> = {
   primary:
     'bg-cta text-bg shadow-[0_0_0_1px_var(--border-strong),0_10px_40px_-10px_var(--glow-cyan)] hover:shadow-[0_0_0_1px_var(--cyan),0_14px_50px_-8px_var(--glow-cyan)]',
   secondary: 'card-glass text-fg hover:border-line-strong hover:text-cyan',
+  /** Dark button for use on bright gradient surfaces. */
+  inverse:
+    'bg-bg text-fg shadow-[0_12px_40px_-12px_var(--bg)] hover:text-cyan hover:shadow-[0_16px_50px_-10px_var(--bg)]',
   ghost: 'text-muted hover:text-fg',
 };
 

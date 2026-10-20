@@ -1,3 +1,5 @@
+import { Faq } from '@/features/faq/Faq';
+import { FinalCta } from '@/features/final-cta/FinalCta';
 import { Hero } from '@/features/hero/Hero';
 import { Portfolio } from '@/features/portfolio/Portfolio';
 import { Process } from '@/features/process/Process';
@@ -14,6 +16,8 @@ export default function Home() {
       <WhyNexora />
       <Process />
       <Portfolio />
+      <Faq />
+      <FinalCta />
     </main>
   );
 }
