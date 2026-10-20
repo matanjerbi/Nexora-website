@@ -10,7 +10,7 @@ import { Services } from '@/features/services/Services';
 
 export default function Home() {
   return (
-    <main id="main">
+    <main id="main" tabIndex={-1} className="outline-none">
       <JsonLd />
       <Hero />
       <Services />
