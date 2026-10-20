@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { NMark } from '@/components/ui/NMark';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
-import { getPathname } from '@/i18n/navigation';
+import { localizedPath } from '@/lib/seo';
 
 export default function NotFound() {
   const t = useTranslations('NotFound');
@@ -22,7 +22,7 @@ export default function NotFound() {
         </h1>
         <p className="mt-4 max-w-md text-muted">{t('description')}</p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <Button href={getPathname({ href: '/', locale })} variant="secondary" size="lg">
+          <Button href={localizedPath(locale)} variant="secondary" size="lg">
             {t('home')}
           </Button>
           <WhatsAppButton message={tw('messages.notFound')} label={tw('cta')} size="lg" />

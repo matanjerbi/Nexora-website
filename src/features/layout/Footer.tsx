@@ -6,7 +6,7 @@ import { Logo } from '@/components/ui/Logo';
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
 import { siteConfig } from '@/config/site';
 import { mainNav } from '@/config/navigation';
-import { getPathname } from '@/i18n/navigation';
+import { localizedPath } from '@/lib/seo';
 import { whatsappLink } from '@/lib/whatsapp';
 import { CopyrightYear } from './CopyrightYear';
 
@@ -14,8 +14,9 @@ export function Footer() {
   const t = useTranslations('Footer');
   const nav = useTranslations('Nav');
   const tw = useTranslations('WhatsApp');
+  const tl = useTranslations('LanguageSwitcher');
   const locale = useLocale();
-  const home = getPathname({ href: '/', locale });
+  const home = localizedPath(locale);
 
   const contacts = [
     {
@@ -49,7 +50,7 @@ export function Footer() {
             <Logo />
           </a>
           <p className="eyebrow">{siteConfig.tagline[locale]}</p>
-          <LanguageSwitcher className="self-start" />
+          <LanguageSwitcher locale={locale} label={tl('label')} className="self-start" />
         </div>
 
         <nav aria-label={t('navigation')}>
@@ -92,7 +93,7 @@ export function Footer() {
             © <CopyrightYear /> {siteConfig.name}. {t('rights')}
           </p>
           <a
-            href={getPathname({ href: '/accessibility', locale })}
+            href={localizedPath(locale, '/accessibility')}
             className="transition-colors hover:text-cyan"
           >
             {t('accessibility')}

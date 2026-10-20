@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
-import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { hasLocale } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locale as rootLocale } from 'next/root-params';
 import { MotionProvider } from '@/components/motion/MotionProvider';
@@ -45,21 +45,17 @@ export default async function LocaleLayout({ children }: LayoutProps<'/[locale]'
   const locale = await rootLocale();
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  // Only ship the strings client components actually read; everything else renders on the server.
-  const { LanguageSwitcher } = await getMessages();
-
   return (
     <html lang={locale} dir={localeDirection[locale]} className={fontVariables}>
       <body className="bg-bg text-fg">
-        <NextIntlClientProvider messages={{ LanguageSwitcher }}>
-          <MotionProvider>
-            <SkipLink />
-            <Header />
-            {children}
-            <Footer />
-            <FloatingWhatsApp />
-          </MotionProvider>
-        </NextIntlClientProvider>
+        {/* No NextIntlClientProvider: all copy renders on the server; client islands get props. */}
+        <MotionProvider>
+          <SkipLink />
+          <Header />
+          {children}
+          <Footer />
+          <FloatingWhatsApp />
+        </MotionProvider>
       </body>
     </html>
   );
