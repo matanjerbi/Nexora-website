@@ -1,12 +1,14 @@
 import { useId } from 'react';
 import { cn } from '@/lib/cn';
+import { N_MARK } from './nmark-geometry';
 
-/** Geometry of the folded-ribbon "N" (viewBox 0 0 100 100). */
-const LEFT_LEG = 'M10 12H30V74L10 90Z';
-const DIAGONAL = 'M10 12H34L74 74V88H52Z';
-const RIGHT_LEG = 'M54 30L72 12H74V88H54Z';
-const BADGE = 'M80 22L94 36L80 50L66 36Z';
-const GLYPH = 'M76 31L72 36L76 41M84 31L88 36L84 41M80 30V42';
+const {
+  leftLeg: LEFT_LEG,
+  diagonal: DIAGONAL,
+  rightLeg: RIGHT_LEG,
+  badge: BADGE,
+  glyph: GLYPH,
+} = N_MARK;
 
 type NMarkProps = {
   className?: string;
