@@ -1,0 +1,256 @@
+@import 'tailwindcss';
+
+/* Per-language styling: English display type is wide uppercase Michroma, Hebrew is bold Heebo. */
+@custom-variant en (&:where(:lang(en), :lang(en) *));
+@custom-variant he (&:where(:lang(he), :lang(he) *));
+
+/* ------------------------------------------------------------------ */
+/* Brand tokens (see CLAUDE.md). The only place raw colors may live.   */
+/* ------------------------------------------------------------------ */
+:root {
+  --bg: #050a18;
+  --bg-elevated: #0a1228;
+  --surface: #0e1834;
+  --border: rgba(63, 217, 245, 0.12);
+  --cyan: #3fd9f5;
+  --blue: #2f7bf5;
+  --deep-blue: #1d3fd6;
+  --gradient-brand: linear-gradient(135deg, #3fd9f5 0%, #2f7bf5 50%, #1d3fd6 100%);
+  --text: #ffffff;
+  --text-muted: #9aa8c7;
+
+  /* Derived tokens. Text/CTA gradients stop at --blue so contrast stays AA. */
+  --gradient-cta: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
+  --gradient-text: linear-gradient(120deg, var(--text) 0%, var(--cyan) 45%, var(--blue) 100%);
+  --border-strong: rgba(63, 217, 245, 0.28);
+  --glow-cyan: rgba(63, 217, 245, 0.35);
+  --glow-blue: rgba(47, 123, 245, 0.3);
+  --glow-deep: rgba(29, 63, 214, 0.35);
+  --surface-glass: rgba(14, 24, 52, 0.6);
+  --header-glass: rgba(5, 10, 24, 0.72);
+
+  /* Font stacks: Hebrew uses Heebo throughout; English uses Michroma + Inter. */
+  --font-active-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-active-display: var(--font-michroma), var(--font-inter), ui-sans-serif, sans-serif;
+
+  color-scheme: dark;
+}
+
+:root:lang(he) {
+  --font-active-body: var(--font-heebo), ui-sans-serif, system-ui, sans-serif;
+  --font-active-display: var(--font-heebo), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-*: initial;
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-cyan: var(--cyan);
+  --color-blue: var(--blue);
+  --color-deep-blue: var(--deep-blue);
+  --color-fg: var(--text);
+  --color-muted: var(--text-muted);
+  --color-glass: var(--surface-glass);
+  --color-header: var(--header-glass);
+
+  --font-sans: var(--font-active-body);
+  --font-display: var(--font-active-display);
+  --font-brand: var(--font-michroma), ui-sans-serif, sans-serif;
+
+  --background-image-brand: var(--gradient-brand);
+  --background-image-cta: var(--gradient-cta);
+
+  --animate-draw: draw 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  --animate-fill-in: fade-in 0.8s ease-out 1.1s both;
+  --animate-outline-out: fade-out 0.8s ease-in 2.2s forwards;
+  --animate-shimmer: shimmer 5s ease-in-out 2s infinite;
+  --animate-rise: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-reveal-up: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+  --animate-glow-drift: glow-drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  40%,
+  100% {
+    transform: translateX(220%) skewX(-20deg);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+@keyframes glow-drift {
+  from {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(6%, 5%, 0) scale(1.12);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+@layer base {
+  html {
+    background-color: var(--bg);
+    color: var(--text);
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    min-height: 100dvh;
+    font-family: var(--font-active-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--cyan);
+    color: var(--bg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      animation-delay: 0ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Brand utilities                                                     */
+/* ------------------------------------------------------------------ */
+@utility eyebrow {
+  font-family: var(--font-active-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+/* Wide tracking breaks up Hebrew letterforms; keep eyebrows tighter and a touch larger there. */
+@layer utilities {
+  .eyebrow:lang(he) {
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+  }
+}
+
+@utility text-gradient {
+  background-image: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Glassy elevated surface with a gradient hairline border. */
+@utility card-glass {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--surface-glass), var(--surface-glass)) padding-box,
+    linear-gradient(
+        135deg,
+        var(--border-strong),
+        var(--border) 40%,
+        var(--border) 60%,
+        var(--glow-deep)
+      )
+      border-box;
+}
+
+/* Subtle technical grid, faded out toward the edges. */
+@utility bg-grid {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+@utility divider-v {
+  width: 1px;
+  align-self: stretch;
+  background-image: linear-gradient(to bottom, transparent, var(--cyan), transparent);
+  opacity: 0.6;
+}

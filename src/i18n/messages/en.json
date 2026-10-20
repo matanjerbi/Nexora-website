@@ -1,0 +1,120 @@
+{
+  "Metadata": {
+    "title": "Nexora | Websites & Tech Support for Small Businesses",
+    "titleTemplate": "%s | Nexora",
+    "description": "Fast, secure landing pages and business websites for small businesses, with maintenance, monitoring and ongoing support. One point of contact for everything technical."
+  },
+  "SkipLink": {
+    "label": "Skip to main content"
+  },
+  "LanguageSwitcher": {
+    "label": "Language"
+  },
+  "Nav": {
+    "label": "Main navigation",
+    "home": "Nexora, home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "services": "Services",
+    "why": "Why Nexora",
+    "process": "Process",
+    "portfolio": "Work",
+    "faq": "FAQ"
+  },
+  "WhatsApp": {
+    "cta": "Talk to us on WhatsApp",
+    "short": "WhatsApp",
+    "floatingLabel": "Message us on WhatsApp",
+    "newTab": "(opens in a new tab)",
+    "messages": {
+      "general": "Hi, I found you through your website and would like to hear more.",
+      "hero": "Hi, I'd like to hear how you can help my business.",
+      "portfolio": "Hi, I saw your work on the website and would like to talk about a project.",
+      "faq": "Hi, I have a question I couldn't find on the website.",
+      "finalCta": "Hi, I'd like to start a new project.",
+      "notFound": "Hi, I landed on a page that doesn't exist on your site and could use some help.",
+      "accessibility": "Hi, I'd like to report an accessibility issue on the website."
+    }
+  },
+  "Hero": {
+    "eyebrow": "Websites & Tech Support",
+    "titleLine1": "Websites that bring customers.",
+    "titleLine2": "Infrastructure that stays up.",
+    "subtitle": "We build fast, secure, monitored websites for small businesses, and stay with you long after launch. One point of contact for everything technical.",
+    "primaryCta": "Talk to us on WhatsApp",
+    "secondaryCta": "See what we do",
+    "note": "Quick replies · No commitment"
+  },
+  "Services": {
+    "eyebrow": "Services",
+    "title": "What we build for you",
+    "description": "Three solutions, one goal: an online presence that works. No complicated price lists. Every project gets a quote tailored to it.",
+    "included": "What's included",
+    "idealFor": "Who it's for",
+    "cta": "Let's get you a quote"
+  },
+  "Capabilities": {
+    "title": "What we cover"
+  },
+  "Why": {
+    "eyebrow": "Why Nexora",
+    "title": "Most website builders stop at design.",
+    "titleAccent": "We build like engineers.",
+    "description": "Fast, secure, monitored, and built to last. Behind Nexora is real systems-engineering experience, not just design.",
+    "backgroundTitle": "Our background",
+    "benefitsTitle": "What that means for you"
+  },
+  "Process": {
+    "eyebrow": "How we work",
+    "title": "From first conversation to a live site",
+    "description": "Five clear steps. No surprises along the way.",
+    "step": "Step {number}"
+  },
+  "Portfolio": {
+    "eyebrow": "Work",
+    "title": "Selected projects",
+    "description": "Every project is built from scratch around the business, its brand and its customers.",
+    "status": {
+      "live": "Live",
+      "demo": "Demo project"
+    },
+    "visit": "Visit site",
+    "tech": "Tech stack",
+    "cta": "Want to be our next project?"
+  },
+  "Faq": {
+    "eyebrow": "FAQ",
+    "title": "Everything you wanted to ask",
+    "description": "Short answers to the questions we hear most.",
+    "more": "Didn't find your answer?",
+    "ask": "Ask us on WhatsApp"
+  },
+  "FinalCta": {
+    "title": "Ready for a website that works for you?",
+    "description": "Tell us about your business and we'll come back with a direction and a quote. No commitment, no forms.",
+    "cta": "Start on WhatsApp",
+    "or": "Or call:"
+  },
+  "Footer": {
+    "contact": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "navigation": "Navigation",
+    "accessibility": "Accessibility statement",
+    "rights": "All rights reserved."
+  },
+  "NotFound": {
+    "metaTitle": "Page not found",
+    "code": "404",
+    "title": "We couldn't find that page",
+    "description": "The link may be broken or the page may have moved. Head back home, or message us and we'll help.",
+    "home": "Back to home"
+  },
+  "Accessibility": {
+    "metaTitle": "Accessibility statement",
+    "title": "Accessibility statement",
+    "contactTitle": "Accessibility contact",
+    "updated": "Last updated: {date}"
+  }
+}
