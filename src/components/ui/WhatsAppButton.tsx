@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { MagneticButton } from '@/components/motion/MagneticButton';
+import { cn } from '@/lib/cn';
 import { whatsappLink } from '@/lib/whatsapp';
 import { Button, type ButtonProps } from './Button';
 import { WhatsAppIcon } from './WhatsAppIcon';
@@ -17,15 +18,23 @@ export function WhatsAppButton({
   message,
   label,
   magnetic = false,
+  className,
   ...props
 }: WhatsAppButtonProps) {
   const t = useTranslations('WhatsApp');
   const button = (
-    <Button href={whatsappLink(message)} target="_blank" rel="noopener noreferrer" {...props}>
+    <Button
+      href={whatsappLink(message)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cn(magnetic && 'w-full', className)}
+      {...props}
+    >
       <WhatsAppIcon />
       <span>{label}</span>
       <span className="sr-only">{t('newTab')}</span>
     </Button>
   );
-  return magnetic ? <MagneticButton>{button}</MagneticButton> : button;
+  // The magnetic wrapper takes the sizing classes so full-width buttons stay full-width.
+  return magnetic ? <MagneticButton className={className}>{button}</MagneticButton> : button;
 }
