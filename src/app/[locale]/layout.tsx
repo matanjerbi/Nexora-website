@@ -46,7 +46,14 @@ export default async function LocaleLayout({ children }: LayoutProps<'/[locale]'
   if (!hasLocale(routing.locales, locale)) notFound();
 
   return (
-    <html lang={locale} dir={localeDirection[locale]} className={fontVariables}>
+    // suppressHydrationWarning: browser extensions inject attributes on <html> before React loads
+    // (e.g. `__gcrremoteframetoken`). It only silences this element's own attributes, not its children.
+    <html
+      lang={locale}
+      dir={localeDirection[locale]}
+      className={fontVariables}
+      suppressHydrationWarning
+    >
       <body className="bg-bg text-fg">
         {/* No NextIntlClientProvider: all copy renders on the server; client islands get props. */}
         <MotionProvider>
