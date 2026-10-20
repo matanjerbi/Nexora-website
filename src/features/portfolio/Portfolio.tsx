@@ -13,7 +13,7 @@ export function Portfolio() {
   return (
     <Section
       id="portfolio"
-      index="04"
+      index="06"
       eyebrow={t('eyebrow')}
       title={t('title')}
       description={t('description')}

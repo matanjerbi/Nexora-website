@@ -45,6 +45,39 @@
     "secondaryCta": "מה אנחנו עושים",
     "note": "מענה מהיר · בלי התחייבות"
   },
+  "Proof": {
+    "eyebrow": "הוכחה, לא הבטחה",
+    "title": "אל תאמינו לנו. תמדדו.",
+    "description": "המספרים כאן לא נכתבו מראש. הדפדפן שלכם מדד אותם עכשיו, ברגע שנכנסתם לעמוד. ככה נראה אתר שנבנה כמו שצריך.",
+    "live": "נמדד עכשיו בדפדפן שלכם",
+    "measuring": "מודד…",
+    "unavailable": "n/a",
+    "paint": {
+      "label": "זמן עד שהתוכן הופיע",
+      "hint": "Largest Contentful Paint",
+      "unit": "שנ׳"
+    },
+    "weight": {
+      "label": "משקל העמוד",
+      "hint": "Transferred, compressed",
+      "unit": "KB"
+    },
+    "requests": {
+      "label": "קבצים שנטענו",
+      "hint": "HTTP requests"
+    },
+    "cls": {
+      "label": "קפיצות בתצוגה",
+      "hint": "CLS · 0 = מושלם"
+    },
+    "compare": {
+      "title": "משקל העמוד, בהשוואה",
+      "thisPage": "העמוד הזה",
+      "average": "עמוד בית ממוצע ברשת",
+      "lighter": "העמוד הזה קל פי {times} מהממוצע",
+      "source": "מקור: {source} (חציון, מובייל)"
+    }
+  },
   "Services": {
     "eyebrow": "שירותים",
     "title": "מה אנחנו בונים בשבילכם",

@@ -12,7 +12,7 @@ export function Process() {
   return (
     <Section
       id="process"
-      index="03"
+      index="05"
       eyebrow={t('eyebrow')}
       title={t('title')}
       description={t('description')}

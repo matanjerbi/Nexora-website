@@ -15,7 +15,7 @@ export function WhyNexora() {
   return (
     <Section
       id="why"
-      index="02"
+      index="03"
       eyebrow={t('eyebrow')}
       title={
         <>
