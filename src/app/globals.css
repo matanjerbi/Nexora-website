@@ -68,6 +68,7 @@
   --animate-outline-out: fade-out 0.8s ease-in 2.2s forwards;
   --animate-shimmer: shimmer 5s ease-in-out 2s infinite;
   --animate-rise: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-reveal-up: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
   --animate-glow-drift: glow-drift 14s ease-in-out infinite alternate;
 }
@@ -113,6 +114,15 @@
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    transform: translateY(105%);
+  }
+  to {
     transform: translateY(0);
   }
 }
