@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14110d"/>
+      <stop offset="1" stop-color="#07070a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3e2b8"/>
+      <stop offset=".5" stop-color="#c9a45c"/>
+      <stop offset="1" stop-color="#8a6a32"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".55" r=".5">
+      <stop offset="0" stop-color="#c9a45c" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#c9a45c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <!-- browser chrome -->
+  <rect width="1200" height="44" fill="#0d0c0a"/>
+  <g fill="#3a352c"><circle cx="28" cy="22" r="6"/><circle cx="50" cy="22" r="6"/><circle cx="72" cy="22" r="6"/></g>
+  <rect x="420" y="12" width="360" height="20" rx="10" fill="#1b1914"/>
+  <!-- nav -->
+  <text x="80" y="104" font-family="Georgia, serif" font-size="22" letter-spacing="8" fill="url(#gold)">NOBLE</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" letter-spacing="3" fill="#a59a86">
+    <text x="730" y="102">COLLECTIONS</text><text x="900" y="102">ATELIER</text><text x="1010" y="102">CONTACT</text>
+  </g>
+  <!-- hero -->
+  <rect x="0" y="140" width="1200" height="610" fill="url(#glow)"/>
+  <g transform="translate(600 400)" fill="none" stroke="url(#gold)">
+    <circle r="120" stroke-width="10"/>
+    <circle r="132" stroke-width="1" opacity=".5"/>
+    <path d="M-34 -118 L0 -176 L34 -118 Z" stroke-width="3" fill="#f3e2b8" fill-opacity=".12"/>
+    <path d="M-34 -118 L0 -150 L34 -118 M0 -176 L0 -150" stroke-width="1.5"/>
+  </g>
+  <text x="600" y="610" text-anchor="middle" font-family="Georgia, serif" font-size="46" letter-spacing="14" fill="#f4ecdc">TIMELESS BY DESIGN</text>
+  <text x="600" y="652" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" letter-spacing="6" fill="#a59a86">HANDCRAFTED FINE JEWELRY</text>
+  <rect x="540" y="680" width="120" height="1" fill="url(#gold)"/>
+</svg>
