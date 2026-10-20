@@ -4,6 +4,8 @@ import { Container } from './Container';
 
 type SectionProps = Omit<ComponentPropsWithoutRef<'section'>, 'title'> & {
   id: string;
+  /** Section number shown before the eyebrow, e.g. "01". */
+  index?: string;
   eyebrow?: string;
   title?: ReactNode;
   description?: ReactNode;
@@ -11,9 +13,13 @@ type SectionProps = Omit<ComponentPropsWithoutRef<'section'>, 'title'> & {
   background?: ReactNode;
 };
 
-/** Page section with a consistent header (eyebrow, title, description) and an accessible name. */
+/**
+ * Page section with an editorial, start-aligned header: numbered mono label and title on one
+ * side, description on the other (stacked on mobile). Gives every section an accessible name.
+ */
 export function Section({
   id,
+  index,
   eyebrow,
   title,
   description,
@@ -37,18 +43,30 @@ export function Section({
       )}
       <Container>
         {(eyebrow || title || description) && (
-          <header className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
-            {eyebrow && <p className="mb-4 eyebrow">{eyebrow}</p>}
-            {title && (
-              <h2
-                id={headingId}
-                className="font-display text-3xl leading-tight font-bold text-balance sm:text-4xl en:text-2xl en:font-normal en:uppercase en:sm:text-3xl"
-              >
-                {title}
-              </h2>
-            )}
+          <header className="mb-12 grid gap-5 border-b border-line pb-10 sm:mb-16 lg:grid-cols-[1.25fr_1fr] lg:items-end lg:gap-16">
+            <div>
+              {eyebrow && (
+                <p className="mb-5 flex items-center gap-3 eyebrow">
+                  {index && (
+                    <span aria-hidden className="font-mono text-muted">
+                      {index}
+                    </span>
+                  )}
+                  <span aria-hidden className="h-px w-8 bg-line-strong" />
+                  {eyebrow}
+                </p>
+              )}
+              {title && (
+                <h2
+                  id={headingId}
+                  className="font-display text-3xl leading-[1.15] font-bold tracking-tight text-balance sm:text-[2.6rem]"
+                >
+                  {title}
+                </h2>
+              )}
+            </div>
             {description && (
-              <p className="mt-5 text-base leading-relaxed text-pretty text-muted sm:text-lg">
+              <p className="text-base leading-relaxed text-pretty text-muted sm:text-lg lg:pb-1.5">
                 {description}
               </p>
             )}

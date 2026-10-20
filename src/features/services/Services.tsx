@@ -11,6 +11,7 @@ export function Services() {
   return (
     <Section
       id="services"
+      index="01"
       eyebrow={t('eyebrow')}
       title={t('title')}
       description={t('description')}

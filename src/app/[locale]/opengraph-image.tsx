@@ -26,15 +26,11 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
   const isHebrew = locale === 'he';
   const line = (key: 'titleLine1' | 'titleLine2') => (isHebrew ? toVisualRtl(t(key)) : t(key));
 
-  const [michroma, heeboBold, heebo] = await Promise.all([
+  const [michroma, plexBold, plex] = await Promise.all([
     readFile(join(fontDir, 'Michroma-Regular.ttf')),
-    readFile(join(fontDir, 'Heebo-ExtraBold.ttf')),
-    readFile(join(fontDir, 'Heebo-Regular.ttf')),
+    readFile(join(fontDir, 'IBMPlexSansHebrew-Bold.ttf')),
+    readFile(join(fontDir, 'IBMPlexSansHebrew-Regular.ttf')),
   ]);
-
-  const headline = isHebrew
-    ? { fontFamily: 'Heebo', fontWeight: 800, fontSize: 64, letterSpacing: 0 }
-    : { fontFamily: 'Michroma', fontWeight: 400, fontSize: 38, letterSpacing: 1 };
 
   return new ImageResponse(
     <div
@@ -47,7 +43,7 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
         padding: 72,
         background: `radial-gradient(circle at 85% 20%, rgba(47,123,245,0.35), transparent 55%), radial-gradient(circle at 10% 110%, rgba(29,63,214,0.45), transparent 50%), ${c.bg}`,
         color: c.text,
-        fontFamily: 'Heebo',
+        fontFamily: 'Plex',
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
@@ -66,9 +62,11 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
           flexDirection: 'column',
           alignItems: isHebrew ? 'flex-end' : 'flex-start',
           textAlign: isHebrew ? 'right' : 'left',
-          textTransform: isHebrew ? 'none' : 'uppercase',
-          ...headline,
-          lineHeight: 1.2,
+          fontFamily: 'Plex',
+          fontWeight: 700,
+          fontSize: isHebrew ? 66 : 58,
+          letterSpacing: -1,
+          lineHeight: 1.15,
         }}
       >
         <div style={{ display: 'flex' }}>{line('titleLine1')}</div>
@@ -98,8 +96,8 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
       ...size,
       fonts: [
         { name: 'Michroma', data: michroma, weight: 400, style: 'normal' },
-        { name: 'Heebo', data: heeboBold, weight: 800, style: 'normal' },
-        { name: 'Heebo', data: heebo, weight: 400, style: 'normal' },
+        { name: 'Plex', data: plexBold, weight: 700, style: 'normal' },
+        { name: 'Plex', data: plex, weight: 400, style: 'normal' },
       ],
     },
   );

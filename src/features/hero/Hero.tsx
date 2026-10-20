@@ -39,7 +39,7 @@ export function Hero() {
 
           <h1
             id="hero-title"
-            className="font-display text-[2.6rem] leading-[1.08] font-extrabold tracking-tight text-balance sm:text-6xl lg:text-[4.1rem] en:text-[1.4rem] en:leading-[1.25] en:font-normal en:tracking-normal en:uppercase en:sm:text-4xl en:lg:text-[2.6rem]"
+            className="font-display text-[2.5rem] leading-[1.06] font-bold tracking-tight text-balance sm:text-6xl lg:text-[4.25rem]"
           >
             <RevealLine delay={80}>{t('titleLine1')}</RevealLine>
             <RevealLine delay={220}>

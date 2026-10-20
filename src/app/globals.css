@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* Per-language styling: English display type is wide uppercase Michroma, Hebrew is bold Heebo. */
+/* Per-language styling hooks. */
 @custom-variant en (&:where(:lang(en), :lang(en) *));
 @custom-variant he (&:where(:lang(he), :lang(he) *));
 
@@ -29,16 +29,11 @@
   --surface-glass: rgba(14, 24, 52, 0.6);
   --header-glass: rgba(5, 10, 24, 0.72);
 
-  /* Font stacks: Hebrew uses Heebo throughout; English uses Michroma + Inter. */
-  --font-active-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-active-display: var(--font-michroma), var(--font-inter), ui-sans-serif, sans-serif;
+  /* Font stacks. Plex Sans Hebrew covers Hebrew and Latin; mono falls back to it for Hebrew glyphs. */
+  --font-stack-sans: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  --font-stack-mono: var(--font-plex-mono), var(--font-plex), ui-monospace, monospace;
 
   color-scheme: dark;
-}
-
-:root:lang(he) {
-  --font-active-body: var(--font-heebo), ui-sans-serif, system-ui, sans-serif;
-  --font-active-display: var(--font-heebo), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {
@@ -56,8 +51,9 @@
   --color-glass: var(--surface-glass);
   --color-header: var(--header-glass);
 
-  --font-sans: var(--font-active-body);
-  --font-display: var(--font-active-display);
+  --font-sans: var(--font-stack-sans);
+  --font-display: var(--font-stack-sans);
+  --font-mono: var(--font-stack-mono);
   --font-brand: var(--font-michroma), ui-sans-serif, sans-serif;
 
   --background-image-brand: var(--gradient-brand);
@@ -160,7 +156,7 @@
 
   body {
     min-height: 100dvh;
-    font-family: var(--font-active-body);
+    font-family: var(--font-stack-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -199,21 +195,23 @@
 /* ------------------------------------------------------------------ */
 /* Brand utilities                                                     */
 /* ------------------------------------------------------------------ */
+/* Section labels: monospace, like a spec sheet. */
 @utility eyebrow {
-  font-family: var(--font-active-body);
+  font-family: var(--font-stack-mono);
   font-size: 0.75rem;
-  font-weight: 300;
-  letter-spacing: 0.3em;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--cyan);
 }
 
-/* Wide tracking breaks up Hebrew letterforms; keep eyebrows tighter and a touch larger there. */
+/* Letter-spacing breaks up Hebrew letterforms; keep Hebrew labels tight and slightly larger. */
 @layer utilities {
+  /* Mono has no Hebrew glyphs and its wide spaces gap Hebrew words; numbers keep `font-mono`. */
   .eyebrow:lang(he) {
-    font-size: 0.875rem;
-    font-weight: 400;
-    letter-spacing: 0.08em;
+    font-family: var(--font-stack-sans);
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
   }
 }
 

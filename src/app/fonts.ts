@@ -1,6 +1,25 @@
-import { Heebo, Inter, Michroma } from 'next/font/google';
+import { IBM_Plex_Mono, IBM_Plex_Sans_Hebrew, Michroma } from 'next/font/google';
 
-/** Wide geometric display face matching the wordmark (EN display + brand wordmark). */
+/**
+ * Primary face for both locales: one engineered family with matching Hebrew and Latin,
+ * so /he and /en read as the same brand. Two weights only (regular + bold) to keep preloads small.
+ */
+export const plex = IBM_Plex_Sans_Hebrew({
+  weight: ['400', '700'],
+  subsets: ['hebrew', 'latin'],
+  display: 'swap',
+  variable: '--font-plex',
+});
+
+/** Technical accents: labels, numbers, live measurements. */
+export const plexMono = IBM_Plex_Mono({
+  weight: ['400', '500'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-plex-mono',
+});
+
+/** The NEXORA wordmark only (it's part of the logo). */
 export const michroma = Michroma({
   weight: '400',
   subsets: ['latin'],
@@ -8,19 +27,4 @@ export const michroma = Michroma({
   variable: '--font-michroma',
 });
 
-/** English body only, so it isn't preloaded on every page; the metric-matched fallback keeps CLS at 0. */
-export const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  preload: false,
-  variable: '--font-inter',
-});
-
-/** Hebrew display and body. */
-export const heebo = Heebo({
-  subsets: ['hebrew', 'latin'],
-  display: 'swap',
-  variable: '--font-heebo',
-});
-
-export const fontVariables = [michroma.variable, inter.variable, heebo.variable].join(' ');
+export const fontVariables = [plex.variable, plexMono.variable, michroma.variable].join(' ');

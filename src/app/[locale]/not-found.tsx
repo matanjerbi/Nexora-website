@@ -17,9 +17,7 @@ export default function NotFound() {
         <title>{t('metaTitle')}</title>
         <NMark className="size-20 opacity-90" />
         <p className="mt-8 text-gradient font-brand text-6xl sm:text-7xl">{t('code')}</p>
-        <h1 className="mt-6 font-display text-3xl font-bold text-balance en:text-2xl en:font-normal en:uppercase">
-          {t('title')}
-        </h1>
+        <h1 className="mt-6 font-display text-3xl font-bold text-balance">{t('title')}</h1>
         <p className="mt-4 max-w-md text-muted">{t('description')}</p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <Button href={localizedPath(locale)} variant="secondary" size="lg">

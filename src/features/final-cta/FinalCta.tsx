@@ -20,7 +20,7 @@ export function FinalCta() {
 
             <h2
               id="final-cta-title"
-              className="mx-auto max-w-3xl font-display text-3xl leading-tight font-extrabold text-balance sm:text-5xl en:text-2xl en:font-normal en:uppercase en:sm:text-4xl"
+              className="mx-auto max-w-3xl font-display text-3xl leading-tight font-extrabold text-balance sm:text-5xl"
             >
               {t('title')}
             </h2>

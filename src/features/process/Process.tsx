@@ -10,7 +10,13 @@ export function Process() {
   const locale = useLocale();
 
   return (
-    <Section id="process" eyebrow={t('eyebrow')} title={t('title')} description={t('description')}>
+    <Section
+      id="process"
+      index="03"
+      eyebrow={t('eyebrow')}
+      title={t('title')}
+      description={t('description')}
+    >
       <div className="relative">
         {/* Connector: vertical along the nodes on mobile, horizontal through them on desktop. */}
         <GrowLine axis="y" className="absolute inset-y-7 start-7 lg:hidden" />
@@ -27,7 +33,9 @@ export function Process() {
                 <Icon name={step.icon} />
               </span>
               <div className="pt-1 lg:pt-0">
-                <p className="mb-2 eyebrow">{t('step', { number: index + 1 })}</p>
+                <p className="mb-2 eyebrow">
+                  {t('step', { number: String(index + 1).padStart(2, '0') })}
+                </p>
                 <h3 className="text-lg font-semibold">{step.title[locale]}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
                   {step.description[locale]}

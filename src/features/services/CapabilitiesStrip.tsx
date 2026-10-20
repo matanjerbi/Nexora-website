@@ -38,7 +38,7 @@ export function CapabilitiesStrip() {
                 )}
                 <Icon name={capability.icon} className="size-10" />
                 <div>
-                  <h3 className="text-sm font-light tracking-[0.2em] text-fg uppercase he:text-base he:font-medium he:tracking-normal">
+                  <h3 className="font-mono text-xs font-medium tracking-[0.14em] text-fg uppercase he:text-sm he:tracking-normal">
                     {capability.title[locale]}
                   </h3>
                   <p className="mt-2 text-xs text-muted sm:text-sm">

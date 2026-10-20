@@ -17,10 +17,7 @@ export function AccessibilityStatement() {
     <Container className="max-w-3xl py-16 sm:py-24">
       <article aria-labelledby="statement-title">
         <header className="mb-12 border-b border-line pb-10">
-          <h1
-            id="statement-title"
-            className="font-display text-4xl font-extrabold en:text-2xl en:font-normal en:uppercase en:sm:text-3xl"
-          >
+          <h1 id="statement-title" className="font-display text-4xl font-extrabold">
             {t('title')}
           </h1>
           <p className="mt-4 text-sm text-muted">

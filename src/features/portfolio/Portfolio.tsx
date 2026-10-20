@@ -13,6 +13,7 @@ export function Portfolio() {
   return (
     <Section
       id="portfolio"
+      index="04"
       eyebrow={t('eyebrow')}
       title={t('title')}
       description={t('description')}
@@ -28,9 +29,7 @@ export function Portfolio() {
         <StaggerItem as="li">
           <div className="flex h-full min-h-72 flex-col items-center justify-center gap-6 rounded-2xl border border-dashed border-line-strong p-8 text-center">
             <NMark className="size-14 opacity-80" />
-            <p className="font-display text-xl font-bold en:text-base en:font-normal en:uppercase">
-              {t('cta')}
-            </p>
+            <p className="font-display text-xl font-bold">{t('cta')}</p>
             <WhatsAppButton message={tw('messages.portfolio')} label={tw('cta')} />
           </div>
         </StaggerItem>

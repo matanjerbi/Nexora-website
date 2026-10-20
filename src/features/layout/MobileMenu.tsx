@@ -73,7 +73,7 @@ export function MobileMenu({ openLabel, closeLabel, navLabel, links, footer }: M
                 >
                   <a
                     href={link.href}
-                    className="block py-3 font-display text-3xl font-bold text-fg transition-colors hover:text-cyan en:text-xl en:font-normal en:uppercase"
+                    className="block py-3 font-display text-3xl font-bold text-fg transition-colors hover:text-cyan"
                   >
                     {link.label}
                   </a>
