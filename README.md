@@ -99,6 +99,15 @@ Put the image in `public/projects/` and append one object to `src/content/projec
 },
 ```
 
+While `projects` is empty, the portfolio section and its nav link are hidden automatically.
+
+### About section and live metrics
+
+- The founder bio, photo and fact list live in `src/content/founder.ts` (photo in `public/brand/`).
+- The "measure it" panel reads real numbers from the visitor's browser (Performance API). The
+  comparison figure and its source are in `src/content/benchmarks.ts`; update it when a newer
+  HTTP Archive Web Almanac is published.
+
 ### Add an FAQ item
 
 Append `{ id, question: { he, en }, answer: { he, en } }` to `src/content/faq.ts`.

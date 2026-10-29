@@ -75,12 +75,12 @@ The site is dark-only: this is the brand.
 
 **Typography:**
 
-| Use                 | Font                                                                 |
-| ------------------- | -------------------------------------------------------------------- |
-| EN display          | wide geometric sans matching the wordmark (e.g. Michroma), uppercase |
-| EN body             | Inter                                                                |
-| Hebrew              | Heebo for display and body, bold weights for headings                |
-| Taglines / eyebrows | uppercase, letter-spacing 0.3em, thin weight                         |
+| Use                     | Font                                                                       |
+| ----------------------- | -------------------------------------------------------------------------- |
+| Headings + body (he/en) | IBM Plex Sans Hebrew (Hebrew + Latin), weights 400/700, bold headings      |
+| Technical accents       | IBM Plex Mono: section numbers, labels, live measurements                  |
+| Wordmark only           | Michroma, uppercase (the NEXORA logo lockup)                               |
+| Labels / eyebrows       | mono, uppercase, letter-spacing 0.14em (Hebrew: Plex Sans, tight tracking) |
 
 **Visual language:**
 

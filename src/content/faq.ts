@@ -6,8 +6,16 @@ export const faqs = z.array(faqSchema).parse([
     id: 'timeline',
     question: { he: 'כמה זמן לוקח לבנות אתר?', en: 'How long does it take to build a site?' },
     answer: {
-      he: 'דף נחיתה עולה בדרך כלל תוך שבוע עד שבועיים. אתר תדמית לוקח בין שלושה לשישה שבועות, תלוי בהיקף ובקצב שבו מגיע התוכן. כבר בשיחה הראשונה נקבע לוח זמנים ברור.',
-      en: 'A landing page usually goes live within one to two weeks. A business website takes three to six weeks, depending on scope and how quickly content comes in. We set a clear timeline in our first conversation.',
+      he: 'בין שבוע לשלושה שבועות, לפי המורכבות של האתר. דף נחיתה בדרך כלל בצד הקצר, אתר תדמית מלא בצד הארוך. כבר בשיחה הראשונה תקבלו לוח זמנים מדויק, ואנחנו עומדים בו.',
+      en: 'Between one and three weeks, depending on how complex the site is. A landing page is usually at the shorter end, a full business website at the longer end. You get an exact timeline in our first conversation, and we stick to it.',
+    },
+  },
+  {
+    id: 'response-time',
+    question: { he: 'כמה מהר עונים?', en: 'How fast do you reply?' },
+    answer: {
+      he: 'מהר. כל הודעה בוואטסאפ מקבלת מענה תוך שעתיים לכל היותר, כך שלא תצטרכו לרדוף אחרינו.',
+      en: 'Fast. Every WhatsApp message gets a reply within two hours at most, so you never have to chase us.',
     },
   },
   {

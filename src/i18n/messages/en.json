@@ -17,6 +17,7 @@
     "closeMenu": "Close menu",
     "services": "Services",
     "why": "Why Nexora",
+    "about": "About",
     "process": "Process",
     "portfolio": "Work",
     "faq": "FAQ"
@@ -33,7 +34,8 @@
       "faq": "Hi, I have a question I couldn't find on the website.",
       "finalCta": "Hi, I'd like to start a new project.",
       "notFound": "Hi, I landed on a page that doesn't exist on your site and could use some help.",
-      "accessibility": "Hi, I'd like to report an accessibility issue on the website."
+      "accessibility": "Hi, I'd like to report an accessibility issue on the website.",
+      "about": "Hi Matan, I saw your website and would like to talk."
     }
   },
   "Hero": {
@@ -43,7 +45,40 @@
     "subtitle": "We build fast, secure, monitored websites for small businesses, and stay with you long after launch. One point of contact for everything technical.",
     "primaryCta": "Talk to us on WhatsApp",
     "secondaryCta": "See what we do",
-    "note": "Quick replies · No commitment"
+    "note": "WhatsApp reply within 2 hours · Live in 1–3 weeks"
+  },
+  "Proof": {
+    "eyebrow": "Proof, not promises",
+    "title": "Don't take our word for it. Measure it.",
+    "description": "These numbers aren't written in advance. Your browser measured them just now, the moment you opened this page. This is what a properly built site looks like.",
+    "live": "Measured live in your browser",
+    "measuring": "Measuring…",
+    "unavailable": "n/a",
+    "paint": {
+      "label": "Time until content appeared",
+      "hint": "Largest Contentful Paint",
+      "unit": "s"
+    },
+    "weight": {
+      "label": "Page weight",
+      "hint": "Transferred, compressed",
+      "unit": "KB"
+    },
+    "requests": {
+      "label": "Files loaded",
+      "hint": "HTTP requests"
+    },
+    "cls": {
+      "label": "Layout jumps",
+      "hint": "CLS · 0 = perfect"
+    },
+    "compare": {
+      "title": "Page weight, compared",
+      "thisPage": "This page",
+      "average": "Average web homepage",
+      "lighter": "This page is {times}× lighter than average",
+      "source": "Source: {source} (median, mobile)"
+    }
   },
   "Services": {
     "eyebrow": "Services",
@@ -65,10 +100,15 @@
     "backgroundTitle": "Our background",
     "benefitsTitle": "What that means for you"
   },
+  "About": {
+    "eyebrow": "Who's behind Nexora",
+    "title": "Nice to meet you, I'm Matan.",
+    "cta": "Talk to me directly"
+  },
   "Process": {
     "eyebrow": "How we work",
     "title": "From first conversation to a live site",
-    "description": "Five clear steps. No surprises along the way.",
+    "description": "Five clear steps, and a live site in one to three weeks.",
     "step": "Step {number}"
   },
   "Portfolio": {
@@ -92,7 +132,7 @@
   },
   "FinalCta": {
     "title": "Ready for a website that works for you?",
-    "description": "Tell us about your business and we'll come back with a direction and a quote. No commitment, no forms.",
+    "description": "Tell us about your business and get a WhatsApp reply within two hours, with a direction and a quote. No commitment, no forms.",
     "cta": "Start on WhatsApp",
     "or": "Or call:"
   },

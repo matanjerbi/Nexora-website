@@ -1,4 +1,4 @@
-import type { Locale, Service } from '@/domain';
+import type { Founder, Locale, Service } from '@/domain';
 import { siteConfig } from '@/config/site';
 import { absoluteUrl, localizedPath, servicePath } from '@/lib/seo';
 
@@ -20,7 +20,11 @@ function areaServed(locale: Locale) {
 /** The studio itself. Referenced from every page by its @id. */
 export function organizationJsonLd(
   locale: Locale,
-  { description, services }: { description: string; services: Service[] },
+  {
+    description,
+    services,
+    founder,
+  }: { description: string; services: Service[]; founder: Founder },
 ) {
   return {
     '@context': 'https://schema.org',
@@ -34,6 +38,12 @@ export function organizationJsonLd(
     image: absoluteUrl(`${localizedPath(locale)}/opengraph-image`),
     telephone: telephone(),
     email: siteConfig.email,
+    founder: {
+      '@type': 'Person',
+      name: founder.name[locale],
+      jobTitle: founder.role[locale],
+      image: absoluteUrl(founder.photo.src),
+    },
     areaServed: areaServed(locale),
     knowsLanguage: ['he', 'en'],
     inLanguage: locale,

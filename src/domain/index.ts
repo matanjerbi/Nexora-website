@@ -135,3 +135,18 @@ export const accessibilityStatementSchema = z.object({
   contactIntro: localizedSchema,
 });
 export type AccessibilityStatement = z.infer<typeof accessibilityStatementSchema>;
+
+export const founderSchema = z.object({
+  name: localizedSchema,
+  role: localizedSchema,
+  photo: z.object({
+    src: z.string().startsWith('/'),
+    width: z.number().int().positive(),
+    height: z.number().int().positive(),
+    alt: localizedSchema,
+  }),
+  bio: z.array(localizedSchema).min(1),
+  /** Short facts shown as a monospace spec list: a value and what it means. */
+  facts: z.array(z.object({ value: localizedSchema, label: localizedSchema })),
+});
+export type Founder = z.infer<typeof founderSchema>;

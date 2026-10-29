@@ -20,10 +20,7 @@ export function ServiceCard({ service }: { service: Service }) {
           <Icon name={service.icon} className="size-7" />
         </div>
 
-        <h3
-          id={headingId}
-          className="font-display text-2xl font-bold en:text-lg en:font-normal en:uppercase"
-        >
+        <h3 id={headingId} className="font-display text-2xl font-bold">
           {service.title[locale]}
         </h3>
         <p className="mt-3 font-medium text-fg">{service.shortDescription[locale]}</p>

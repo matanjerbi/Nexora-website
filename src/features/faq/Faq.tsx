@@ -21,7 +21,7 @@ export function Faq() {
           <p className="mb-4 eyebrow">{t('eyebrow')}</p>
           <h2
             id="faq-title"
-            className="font-display text-3xl leading-tight font-bold text-balance sm:text-4xl en:text-2xl en:font-normal en:uppercase en:sm:text-3xl"
+            className="font-display text-3xl leading-tight font-bold text-balance sm:text-4xl"
           >
             {t('title')}
           </h2>

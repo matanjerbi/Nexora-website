@@ -1,6 +1,8 @@
+import { About } from '@/features/about/About';
 import { Faq } from '@/features/faq/Faq';
 import { FinalCta } from '@/features/final-cta/FinalCta';
 import { Hero } from '@/features/hero/Hero';
+import { LiveProof } from '@/features/live-proof/LiveProof';
 import { Portfolio } from '@/features/portfolio/Portfolio';
 import { Process } from '@/features/process/Process';
 import { JsonLd } from '@/features/seo/JsonLd';
@@ -13,9 +15,11 @@ export default function Home() {
     <main id="main" tabIndex={-1} className="outline-none">
       <JsonLd />
       <Hero />
+      <LiveProof />
       <Services />
       <CapabilitiesStrip />
       <WhyNexora />
+      <About />
       <Process />
       <Portfolio />
       <Faq />
