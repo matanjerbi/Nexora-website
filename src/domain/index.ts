@@ -43,12 +43,24 @@ export const siteConfigSchema = z.object({
   whatsapp: z.string().regex(/^\d+$/, 'digits only, international format'),
   email: z.email(),
   siteUrl: z.url(),
+  /** Where the studio works (structured data `areaServed`). Cities first, then the country. */
+  serviceArea: z.object({
+    cities: z.array(localizedSchema).default([]),
+    country: localizedSchema,
+  }),
+  /** Official profiles (LinkedIn, Facebook, Google Business Profile…) for structured data `sameAs`. */
+  sameAs: z.array(z.url()).default([]),
 });
 export type SiteConfig = z.infer<typeof siteConfigSchema>;
 
+const serviceSectionSchema = z.object({ heading: localizedSchema, body: localizedSchema });
+const serviceFaqSchema = z.object({ question: localizedSchema, answer: localizedSchema });
+
 export const serviceSchema = z.object({
   id: z.string(),
-  slug: z.string(),
+  slug: z.string().regex(/^[a-z0-9-]+$/, 'lowercase URL segment'),
+  /** Search-facing title and description for the service's own page. */
+  seo: z.object({ title: localizedSchema, description: localizedSchema }),
   title: localizedSchema,
   shortDescription: localizedSchema,
   description: localizedSchema,
@@ -56,6 +68,10 @@ export const serviceSchema = z.object({
   icon: iconNameSchema,
   idealFor: localizedSchema,
   whatsappMessage: localizedSchema,
+  /** Long-form sections for the service page. */
+  sections: z.array(serviceSectionSchema).min(1),
+  /** Questions specific to this service (also emitted as FAQPage structured data). */
+  faqs: z.array(serviceFaqSchema).default([]),
 });
 export type Service = z.infer<typeof serviceSchema>;
 

@@ -14,6 +14,11 @@ export function localizedPath(locale: Locale, path = ''): string {
   return `/${locale}${path === '/' ? '' : path}`;
 }
 
+/** Path of a service page (locale-less), e.g. servicePath('landing-pages') → '/services/landing-pages'. */
+export function servicePath(slug: string): string {
+  return `/services/${slug}`;
+}
+
 /** Canonical URL plus hreflang alternates (including x-default) for a path that exists in every locale. */
 export function localeAlternates(locale: Locale, path = '') {
   const languages = Object.fromEntries(

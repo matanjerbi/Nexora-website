@@ -131,7 +131,7 @@ npm run dev                  # http://localhost:3000 → redirects to /he
 ## Running with Docker
 
 ```bash
-cp .env.example .env         # set NEXT_PUBLIC_SITE_URL to the real domain
+cp .env.example .env         # NEXT_PUBLIC_SITE_URL defaults to the production domain
 docker compose up --build -d # http://localhost:3000
 ```
 
@@ -148,10 +148,10 @@ contains only the standalone server, runs as a non-root user, exposes port 3000 
 
 ## Environment variables
 
-| Variable               | Default                 | Notes                                                                                                                                       |
-| ---------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` | Public origin, no trailing slash. Used for canonical, hreflang, sitemap, robots, OG and JSON-LD. **Build-time**: rebuild after changing it. |
-| `PORT`                 | `3000`                  | Host port in `docker-compose.yml` (the container always listens on 3000).                                                                   |
+| Variable               | Default                        | Notes                                                                                                                                       |
+| ---------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | `https://www.nexoraisrael.com` | Public origin, no trailing slash. Used for canonical, hreflang, sitemap, robots, OG and JSON-LD. **Build-time**: rebuild after changing it. |
+| `PORT`                 | `3000`                         | Host port in `docker-compose.yml` (the container always listens on 3000).                                                                   |
 
 ## Deployment notes
 

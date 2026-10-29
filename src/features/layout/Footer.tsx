@@ -6,7 +6,8 @@ import { Logo } from '@/components/ui/Logo';
 import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
 import { siteConfig } from '@/config/site';
 import { mainNav } from '@/config/navigation';
-import { localizedPath } from '@/lib/seo';
+import { services } from '@/content';
+import { localizedPath, servicePath } from '@/lib/seo';
 import { whatsappLink } from '@/lib/whatsapp';
 import { CopyrightYear } from './CopyrightYear';
 
@@ -44,7 +45,7 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-line bg-bg-elevated">
-      <Container className="grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
+      <Container className="grid gap-12 py-16 sm:grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div className="flex flex-col gap-5">
           <a href={home} aria-label={nav('home')} className="self-start rounded-md">
             <Logo />
@@ -60,6 +61,22 @@ export function Footer() {
               <li key={id}>
                 <a href={`${home}#${id}`} className="text-muted transition-colors hover:text-cyan">
                   {nav(id)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav aria-label={t('services')}>
+          <h2 className="mb-4 text-sm font-semibold text-fg">{t('services')}</h2>
+          <ul className="flex flex-col gap-3 text-sm">
+            {services.map((service) => (
+              <li key={service.id}>
+                <a
+                  href={localizedPath(locale, servicePath(service.slug))}
+                  className="text-muted transition-colors hover:text-cyan"
+                >
+                  {service.title[locale]}
                 </a>
               </li>
             ))}

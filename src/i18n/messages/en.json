@@ -51,7 +51,8 @@
     "description": "Three solutions, one goal: an online presence that works. No complicated price lists. Every project gets a quote tailored to it.",
     "included": "What's included",
     "idealFor": "Who it's for",
-    "cta": "Let's get you a quote"
+    "cta": "Let's get you a quote",
+    "details": "More about {service}"
   },
   "Capabilities": {
     "title": "What we cover"
@@ -102,7 +103,8 @@
     "whatsapp": "WhatsApp",
     "navigation": "Navigation",
     "accessibility": "Accessibility statement",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "services": "Services"
   },
   "NotFound": {
     "metaTitle": "Page not found",
@@ -116,5 +118,17 @@
     "title": "Accessibility statement",
     "contactTitle": "Accessibility contact",
     "updated": "Last updated: {date}"
+  },
+  "ServicePage": {
+    "breadcrumbLabel": "Breadcrumb",
+    "home": "Home",
+    "services": "Services",
+    "included": "What's included",
+    "idealFor": "Who it is for",
+    "faqTitle": "Frequently asked questions",
+    "otherServices": "More services",
+    "learnMore": "Learn more",
+    "cta": "Get a quote on WhatsApp",
+    "callOr": "Or call:"
   }
 }
