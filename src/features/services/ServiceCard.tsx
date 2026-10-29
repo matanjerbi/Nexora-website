@@ -1,14 +1,17 @@
-import { Check } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { SpotlightCard } from '@/components/motion/SpotlightCard';
 import { Icon } from '@/components/ui/Icon';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
 import type { Service } from '@/domain';
+import { localeDirection } from '@/i18n/routing';
+import { localizedPath, servicePath } from '@/lib/seo';
 
 export function ServiceCard({ service }: { service: Service }) {
   const t = useTranslations('Services');
   const locale = useLocale();
   const headingId = `service-${service.id}`;
+  const Forward = localeDirection[locale] === 'rtl' ? ArrowLeft : ArrowRight;
 
   return (
     <SpotlightCard className="flex h-full flex-col p-7 sm:p-8">
@@ -38,7 +41,14 @@ export function ServiceCard({ service }: { service: Service }) {
           <p className="leading-relaxed text-muted">{service.idealFor[locale]}</p>
         </div>
 
-        <div className="mt-auto pt-8">
+        <div className="mt-auto flex flex-col gap-4 pt-8">
+          <a
+            href={localizedPath(locale, servicePath(service.slug))}
+            className="inline-flex items-center gap-1.5 self-start text-sm font-semibold text-cyan transition-colors hover:text-fg"
+          >
+            {t('details', { service: service.title[locale] })}
+            <Forward aria-hidden strokeWidth={1.5} className="size-4" />
+          </a>
           <WhatsAppButton
             message={service.whatsappMessage[locale]}
             label={t('cta')}
